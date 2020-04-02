@@ -1,0 +1,21 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: zuul
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+    prefer-ip-address: true
+    appname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8081/eureka
+zuul:
+  routes:
+    consumer:
+      path: /consumer/**
+      serviceId: consumer
+    producer:
+      path: /producer/**
+      serviceId: producer

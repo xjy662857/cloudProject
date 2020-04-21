@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserInfoService {
 
-    @Value("${str}")
-    private String str;
+//    @Value("${str}")
+//    private String str;
 
     public String getInfo(){
-        return str;
+        return "1341654";
     }
 }
